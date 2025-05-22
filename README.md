@@ -1,54 +1,38 @@
-# React + TypeScript + Vite
+# 🪴 GreenShop – E-commerce de Plantas de Jardim
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é um **e-commerce de plantas de jardim** desenvolvido com **React** e organizado com a metodologia **Atomic Design**, visando componentes reutilizáveis, escaláveis e de fácil manutenção.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎯 Objetivo
 
-## Expanding the ESLint configuration
+Construir uma aplicação web de e-commerce para venda de plantas e produtos de jardinagem, utilizando a arquitetura de componentes com Atomic Design para manter o código limpo, modular e bem organizado.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## ⚛️ O que é Atomic Design?
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**Atomic Design** é uma metodologia criada por [Brad Frost](https://bradfrost.com/blog/post/atomic-web-design/) que divide a interface em 5 camadas de complexidade:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Nível        | Descrição                                      | Exemplo no projeto                   |
+|--------------|------------------------------------------------|--------------------------------------|
+| 🧱 Átomos     | Elementos básicos que não podem ser divididos | Botão, Título, Input, Ícone          |
+| ⚗️ Moléculas  | Combinações simples de átomos                 | Card de produto, Campo de busca      |
+| 🧬 Organismos | Blocos funcionais maiores                     | Lista de produtos, Header com carrinho |
+| 🧾 Templates  | Layout da página com estrutura definida       | Página com áreas de banner, produtos e rodapé |
+| 🧍‍♂️ Páginas    | Páginas reais com dados e conteúdo final     | Página inicial, carrinho, checkout   |
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+## 🗂 Estrutura de Pastas
+
+```bash
+src/
+├── components/
+│   ├── atoms/        # Elementos simples (botões, ícones, etc.)
+│   ├── molecules/    # Combos de átomos (card, input com label, etc.)
+│   ├── organisms/    # Seções inteiras (header, listagem de produtos)
+│   ├── templates/    # Estrutura visual da página
+├── pages/            # Páginas completas (Home, Carrinho, Produto)
+├── assets/           # Imagens, ícones e recursos visuais
+
