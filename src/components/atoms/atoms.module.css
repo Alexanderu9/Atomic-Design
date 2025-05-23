@@ -1,0 +1,29 @@
+.primary {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .secundary {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+.size-sm {
+    font-size: 12px;
+}
+
+.size-md {
+    font-size: 16px;
+}
+
+.size-lg {
+    font-size: 20px;
+}
