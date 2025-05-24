@@ -12,6 +12,7 @@ type PlantCardProps = {
   iconSize: 'sm' | 'md' | 'lg';
   sx?: object;
   light: 'sun' | 'shade';
+  
 };
 
 function PlantCard(props: PlantCardProps) {
