@@ -1,11 +1,9 @@
-import { Button, Paper } from '@mui/material';
-import './App.css';
-import PlantCard from './components/molecules/molecules';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
+import { Button, CssBaseline } from '@mui/material';
+import PlantStore from './pages/PlantStore';
 
 function App() {
-
   const claroTheme = createTheme({
     palette: {
       mode: 'light',
@@ -17,11 +15,10 @@ function App() {
         main: '#c2a39a',
       },
       secondary: {
-        main: '#6d4c41', 
+        main: '#6d4c41',
       },
     },
   });
-
 
   const escuroTheme = createTheme({
     palette: {
@@ -39,46 +36,24 @@ function App() {
     },
   });
 
-  const [isEscureTheme, setIsDarkTheme] = useState(false);
+  const [isDark, setIsDark] = useState(false);
+  const toggleTheme = () => setIsDark((prev) => !prev);
 
-  const toggleTheme = () => {
-    setIsDarkTheme((prev) => !prev);
-  };
-
-  const atualTheme = isEscureTheme ? escuroTheme : claroTheme;
+  const theme = isDark ? escuroTheme : claroTheme;
 
   return (
-    <ThemeProvider theme={atualTheme}>
-      <Paper
-        style={{
-          minHeight: '100vh',
-          padding: '2rem',
-          backgroundColor: atualTheme.palette.background.default,
-        }}
-        elevation={0}
-      >
-        <PlantCard
-          buttonText="Comprar Planta"
-          name="Planta"
-          price={12.32}
-          buttonVariant='primary'
-          iconSize="lg"
-          sx={{ color: 'green' }}
-          id={1}
-          light="shade"
-        />
-        <Button
-          variant="contained"
-          onClick={toggleTheme}
-          color="secondary"
-          sx={{ marginTop: '1rem' }}
-        >
+    <div className='bordes'>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <PlantStore />
+      <div style={{ textAlign: 'center', marginTop: '1rem' }}>
+        <Button onClick={toggleTheme} variant="contained" color="secondary">
           Mudar Tema
         </Button>
-      </Paper>
+      </div>
     </ThemeProvider>
+    </div>
   );
 }
 
-export default App;
-
+export default App

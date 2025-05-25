@@ -17,6 +17,7 @@ type PlantCardProps = {
 
 function PlantCard(props: PlantCardProps) {
   return (
+      <div className={Styles.cartas}>
     <div className={Styles[props.light]}>
       <h2>{props.name}</h2>
       <PlantIcon size={props.iconSize} 
@@ -26,6 +27,7 @@ function PlantCard(props: PlantCardProps) {
         variant={props.buttonVariant}
         text={props.buttonText}
       />
+      </div>
     </div>
   );
 }

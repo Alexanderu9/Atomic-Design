@@ -1,1 +1,0 @@
-import './templates.module.css'
